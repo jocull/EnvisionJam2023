@@ -13,4 +13,13 @@ func _process(delta):
 	else:
 		$score_screen.visible = false
 	
-	$countdown.text = str(ceilf(GameManager.timer))
+	if GameManager.phase == GameManager.PHASE.Game:
+		$game_screen.visible = true
+		$startup_screen.visible = false
+		$game_screen/countdown.text = str(ceilf(GameManager.timer))
+		$game_screen/countdown.rotation_degrees = -3 + (randf() * 6)
+	else:
+		$startup_screen/countdown.text = str(ceilf(GameManager.timer))
+		$game_screen.visible = false
+		$startup_screen.visible = true
+		$game_screen/countdown.rotation_degrees = 0

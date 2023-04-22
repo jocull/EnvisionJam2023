@@ -12,16 +12,41 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5fxdf")
 
+[node name="startup_screen" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="countdown" type="Label" parent="startup_screen"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 39.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "3"
+horizontal_alignment = 1
+
 [node name="score_screen" parent="." instance=ExtResource("1_523oj")]
 visible = false
 layout_mode = 1
 
-[node name="countdown" type="Label" parent="."]
+[node name="game_screen" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="countdown" type="Label" parent="game_screen"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 23.0
+offset_bottom = 648.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 24
-text = "30"
+theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.501961)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 128
+text = "15
+"
 horizontal_alignment = 1
+vertical_alignment = 1
